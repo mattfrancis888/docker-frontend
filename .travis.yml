@@ -9,3 +9,9 @@ before_install:
 script:
     - docker run -e CI=true mattfrancis/docker-react npm run test -- --coverage
 # we run dockerfile.dev because dockerfile.dev allows tests suites to run
+
+deploy:
+    provider: heroku
+    api_key: $HEROKU_API_KEY
+    app: docker-frontend-project
+#https://travis-ci.community/t/failed-to-deploy-heroku-api-request-failed-message-invalid-credentials-provided/9988/4

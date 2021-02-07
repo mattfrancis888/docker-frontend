@@ -11,3 +11,4 @@ services:
         volumes:
             - /app/node_modules
             - .:/app
+#We are usign docker compose here for volumes
