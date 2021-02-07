@@ -1,0 +1,11 @@
+language: generic
+sudo: required
+services:
+    - docker
+
+before_install:
+    - docker build -t mattfrancis/docker-react -f Dockerfile.dev .
+# tag is only used in travis, not related to tags in our local computer
+script:
+    - docker run -e CI=true mattfrancis/docker-react npm run test -- --coverage
+# we run dockerfile.dev because dockerfile.dev allows tests suites to run
