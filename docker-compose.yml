@@ -10,5 +10,7 @@ services:
             - "3000:3000"
         volumes:
             - /app/node_modules
+            #don't touch / app_modules
             - .:/app
+            #copy everything in our local files to app
 #We are usign docker compose here for volumes
